@@ -1,6 +1,6 @@
 /**
  * @file lv_conf.h
- * Configuration file for v8.3.0
+ * Configuration file for v8.2.0 and v8.3.2
  */
 
 /*
@@ -19,9 +19,12 @@
 
 #include <stdint.h>
 
+/*Helper*/
+#define __LVGL_V8_3 (__UI_LVGL_VERSION_MAJOR__ == 8 && __UI_LVGL_VERSION_MINOR__ == 3)
+
 /*====================
    COLOR SETTINGS
- *====================*/
+ *====================*/ 
 
 /*Color depth: 1 (1 byte per pixel), 8 (RGB332), 16 (RGB565), 32 (ARGB8888)*/
 #define LV_COLOR_DEPTH __UI_PROJECT_COLOR_DEPTH__
@@ -32,7 +35,7 @@
 /*Enable features to draw on transparent background.
  *It's required if opa, and transform_* style properties are used.
  *Can be also used if the UI is above another layer, e.g. an OSD menu or video player.*/
-#define LV_COLOR_SCREEN_TRANSP 0
+#define LV_COLOR_SCREEN_TRANSP (__LVGL_V8_3 ? 1 : 0)
 
 /* Adjust color mix functions rounding. GPUs might calculate color mix (blending) differently.
  * 0: round down, 64: round up from x.75, 128: round up from half, 192: round up from x.25, 254: round up */
