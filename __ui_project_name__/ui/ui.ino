@@ -1,12 +1,8 @@
 #include <lvgl.h>
 #include <TFT_eSPI.h>
-#include "ui.h"
+#include <ui.h>
 
-/*If you want to use the LVGL examples,
-  make sure to install the lv_examples Arduino library
-  and uncomment the following line.
-#include <lv_examples.h>
-*/
+/*Don't forget to set Sketchbook location in File/Preferencesto the path of your UI project (the parent foder of this INO file)*/
 
 /*Change to your screen resolution*/
 static const uint16_t screenWidth  = __UI_PROJECT_HOR_RES__;
